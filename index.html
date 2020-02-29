@@ -1,0 +1,65 @@
+<html>
+
+
+搜索博文/帖子/用户
+ 登录
+如何利用github绑定自己的域名 原创
+
+刘小易
+6645次阅读 2017-09-18
+关注
+概述
+
+	网上的教程多且乱，废话太多不够明了。
+搞定github
+
+注册网址
+
+在这个网址 https://github.com/      例如用户名：iluqian（自定义）
+添加仓库
+
+Create a new repository  名字必须为  用户名.github.io (如图iluqian.github.io) 如下图所示：
+
+
+添加文件
+
+打开仓库，创建文件index.html （充当首页）和CNAME（用来解析）
+
+
+
+
+
+在index.html 中添如下内容：
+
+
+<html>
+<script>
+    window.location.href="http://blog.csdn.net/iliujie";
+</script>
+<body>
+</body>
+</html>
+如果想支持手机端则将上面的js代码更换如下：
+
+<script>
+function browserRedirect() {
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+        window.location.href="http://pengxin.baklib.com";
+    } else {
+        window.location.href="http://pengxin.baklib.com";
+    }
+}
+browserRedirect();
+</script>
+<body>
+</body>
+</html>
